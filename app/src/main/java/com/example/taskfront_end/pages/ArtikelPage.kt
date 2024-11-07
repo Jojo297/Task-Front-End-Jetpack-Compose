@@ -1,5 +1,4 @@
 package com.example.taskfront_end.pages
-
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
@@ -11,13 +10,13 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 
 @Composable
-fun HomePage(modifier: Modifier = Modifier){
+fun ArtikelPage(modifier: Modifier = Modifier){
     Column(
         modifier = modifier.fillMaxSize()
-            .background(Color.Red),
+            .background(Color.Blue),
         verticalArrangement = Arrangement.Center,
         horizontalAlignment = Alignment.CenterHorizontally
     ) {
-        Text(text = "Home Page", color = Color.White)
+        Text(text = "Artikel Page", color = Color.White)
     }
 }

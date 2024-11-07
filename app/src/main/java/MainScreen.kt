@@ -1,28 +1,24 @@
 
-import android.graphics.drawable.Icon
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.padding
-import androidx.compose.material.icons.Icons
-import androidx.compose.material.icons.filled.Build
-import androidx.compose.material.icons.filled.Email
-import androidx.compose.material.icons.filled.Home
 import androidx.compose.material3.Icon
 import androidx.compose.material3.NavigationBar
 import androidx.compose.material3.NavigationBarItem
 import androidx.compose.material3.Scaffold
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.MutableIntState
 import androidx.compose.runtime.mutableIntStateOf
-import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
-import androidx.compose.runtime.saveable.rememberSaveable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.painterResource
 import com.example.taskfront_end.R
+import com.example.taskfront_end.pages.AboutPage
+import com.example.taskfront_end.pages.ArtikelPage
+import com.example.taskfront_end.pages.HomePage
 
 @Composable
 fun MainSCreen(modifier: Modifier = Modifier){
-
 
     val navItemsList = listOf(
         NavItem("Home", painterResource(id = R.drawable.baseline_home_24)),
@@ -40,9 +36,9 @@ fun MainSCreen(modifier: Modifier = Modifier){
             NavigationBar {
                 navItemsList.forEachIndexed { index, navItem ->
                     NavigationBarItem(
-                        selected = selectedIndex.value == index,
+                        selected = selectedIndex.intValue == index,
                         onClick = {
-                            selectedIndex.value = index
+                            selectedIndex.intValue = index
                         },
                         icon = {
                             Icon(painter = navItem.icon, contentDescription = "Icon")
@@ -55,11 +51,15 @@ fun MainSCreen(modifier: Modifier = Modifier){
             }
         }
         ) { innerPadding ->
-        ContentScreen(modifier = Modifier.padding(innerPadding))
+        ContentScreen(modifier = Modifier.padding(innerPadding),selectedIndex)
     }
 }
 
 @Composable
-fun ContentScreen(modifier: Modifier = Modifier){
-
+fun ContentScreen(modifier: Modifier = Modifier, selectedIndex: MutableIntState){
+    when(selectedIndex.intValue){
+        0 -> HomePage()
+        1 -> ArtikelPage()
+        2 -> AboutPage()
+    }
 }

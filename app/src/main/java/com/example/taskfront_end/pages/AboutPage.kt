@@ -11,13 +11,13 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 
 @Composable
-fun HomePage(modifier: Modifier = Modifier){
+fun AboutPage(modifier: Modifier = Modifier){
     Column(
         modifier = modifier.fillMaxSize()
-            .background(Color.Red),
+            .background(Color.Green),
         verticalArrangement = Arrangement.Center,
         horizontalAlignment = Alignment.CenterHorizontally
     ) {
-        Text(text = "Home Page", color = Color.White)
+        Text(text = "About Page", color = Color.White)
     }
 }
