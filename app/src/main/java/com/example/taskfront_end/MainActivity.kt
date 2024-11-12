@@ -1,17 +1,11 @@
 package com.example.taskfront_end
 
-import MainSCreen
+import Navigation.MainScreen
 import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.activity.enableEdgeToEdge
-import androidx.compose.foundation.layout.fillMaxSize
-import androidx.compose.foundation.layout.padding
-import androidx.compose.material3.Scaffold
-import androidx.compose.material3.Text
-import androidx.compose.runtime.Composable
-import androidx.compose.ui.Modifier
-import androidx.compose.ui.tooling.preview.Preview
+import androidx.navigation.compose.rememberNavController
 import com.example.taskfront_end.ui.theme.TaskFrontEndTheme
 
 class MainActivity : ComponentActivity() {
@@ -20,9 +14,10 @@ class MainActivity : ComponentActivity() {
         enableEdgeToEdge()
         setContent {
             TaskFrontEndTheme {
-                Scaffold(modifier = Modifier.fillMaxSize()) { innerPadding ->
-                    MainSCreen()
-                }
+                // Buat NavHostController
+                val navController = rememberNavController()
+                // Panggil MainScreen dengan navController
+                MainScreen(navController = navController)
             }
         }
     }

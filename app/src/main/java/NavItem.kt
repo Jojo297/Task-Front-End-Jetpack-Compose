@@ -1,7 +1,13 @@
 import androidx.compose.ui.graphics.painter.Painter
 import androidx.compose.ui.graphics.vector.ImageVector
 
-class NavItem (
+data class NavItem (
     val label : String,
     val icon : Painter,
+    val screen : Screen,
 )
+
+//class NavItem (
+//    val label : String,
+//    val icon : Painter,
+//)

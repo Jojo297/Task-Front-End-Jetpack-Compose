@@ -1,4 +1,4 @@
-package com.example.taskfront_end.pages
+package com.example.taskfront_end.pages.Artikel
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
