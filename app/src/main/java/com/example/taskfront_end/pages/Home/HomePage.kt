@@ -32,10 +32,6 @@ fun HomePage(modifier: Modifier = Modifier) {
         modifier = modifier.fillMaxSize()
     ) {
 
-            Header()
-
-
-
             Body()
 
     }

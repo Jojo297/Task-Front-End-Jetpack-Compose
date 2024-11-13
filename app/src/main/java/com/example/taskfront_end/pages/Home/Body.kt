@@ -43,52 +43,60 @@ fun Body(
     books: List<Books> = DummyData.dummyBooks,
     ) {
 
-    Column(
+    LazyColumn(
         modifier = modifier.padding(top = 10.dp),
+        verticalArrangement = Arrangement.spacedBy(16.dp)
     ) {
-        Text(
-            text = "Buku Populer",
-            modifier = Modifier.padding(horizontal = 16.dp),
-            // Sub-headline / Subdue
-            style = TextStyle(
-                fontSize = 14.sp,
-                lineHeight = 19.sp,
-                fontWeight = FontWeight(500),
-                color = Color(0xFF181D27),
-            )
-        )
+        item {
+            Header()
+        }
 
-        LazyRow(
-            modifier = Modifier.padding(top = 16.dp),
-            horizontalArrangement = Arrangement.spacedBy(16.dp),
-            contentPadding = PaddingValues(start = 16.dp, end = 16.dp)
-        ) {
-            items(books, key = { it.id }) { book ->
-                BookItemRow(book)
+        item {
+            Text(
+                text = "Buku Populer",
+                modifier = Modifier.padding(horizontal = 16.dp),
+                // Sub-headline / Subdue
+                style = TextStyle(
+                    fontSize = 14.sp,
+                    lineHeight = 19.sp,
+                    fontWeight = FontWeight(500),
+                    color = Color(0xFF181D27),
+                )
+            )
+        }
+
+        item {
+            LazyRow(
+                modifier = Modifier.padding(top = 16.dp),
+                horizontalArrangement = Arrangement.spacedBy(16.dp),
+                contentPadding = PaddingValues(start = 16.dp, end = 16.dp)
+            ) {
+                items(books, key = { it.id }) { book ->
+                    BookItemRow(book)
+                }
             }
         }
 
-        Text(
-            text = "Buku Terbaru",
-            modifier = Modifier
-                .padding(horizontal = 16.dp)
-                .padding(top = 20.dp),
-            // Sub-headline / Subdue
-            style = TextStyle(
-                fontSize = 14.sp,
-                lineHeight = 19.sp,
-                fontWeight = FontWeight(500),
-                color = Color(0xFF181D27),
+        item {
+            Text(
+                text = "Buku Terbaru",
+                modifier = Modifier
+                    .padding(horizontal = 16.dp)
+                    .padding(top = 20.dp),
+                // Sub-headline / Subdue
+                style = TextStyle(
+                    fontSize = 14.sp,
+                    lineHeight = 19.sp,
+                    fontWeight = FontWeight(500),
+                    color = Color(0xFF181D27),
+                )
             )
-        )
-        LazyColumn(
-            modifier = Modifier.padding(top = 16.dp),
-            verticalArrangement = Arrangement.spacedBy(16.dp),
-        ) {
+        }
+
             items(books, key = { it.id }) { book ->
                 BookItemColumn(book)
             }
-        }
+
     }
 
 

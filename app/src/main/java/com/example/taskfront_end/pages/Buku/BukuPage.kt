@@ -1,4 +1,4 @@
-package com.example.taskfront_end.pages.Artikel
+package com.example.taskfront_end.pages.Buku
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
@@ -10,13 +10,13 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 
 @Composable
-fun ArtikelPage(modifier: Modifier = Modifier){
+fun BukuPage(modifier: Modifier = Modifier){
     Column(
         modifier = modifier.fillMaxSize()
             .background(Color.Blue),
         verticalArrangement = Arrangement.Center,
         horizontalAlignment = Alignment.CenterHorizontally
     ) {
-        Text(text = "Artikel Page", color = Color.White)
+        Text(text = "Buku Page", color = Color.White)
     }
 }
