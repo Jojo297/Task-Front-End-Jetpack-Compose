@@ -13,7 +13,7 @@ import com.example.taskfront_end.pages.Home.HomePage
 fun NavigationGraph(navController: NavHostController, modifier: Modifier = Modifier) {
     NavHost(navController, startDestination = Screen.Home.route, modifier = modifier) {
         composable(Screen.Home.route) { HomePage() }
-        composable(Screen.Buku.route) { BukuPage() }
+        composable(Screen.Buku.route) { BukuPage(navController = navController) }
         composable(Screen.About.route) { AboutPage() }
     }
 }
