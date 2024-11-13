@@ -33,6 +33,7 @@ import androidx.compose.ui.text.TextStyle
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import androidx.navigation.NavController
 import coil.compose.rememberImagePainter
 
 
@@ -41,6 +42,7 @@ import coil.compose.rememberImagePainter
 fun Body(
     modifier: Modifier = Modifier,
     books: List<Books> = DummyData.dummyBooks,
+    navController: NavController
     ) {
 
     LazyColumn(
@@ -67,12 +69,14 @@ fun Body(
 
         item {
             LazyRow(
-                modifier = Modifier.padding(top = 16.dp),
+                modifier = Modifier,
                 horizontalArrangement = Arrangement.spacedBy(16.dp),
                 contentPadding = PaddingValues(start = 16.dp, end = 16.dp)
             ) {
                 items(books, key = { it.id }) { book ->
-                    BookItemRow(book)
+                    BookItemRow(book){ idBuku ->
+                        navController.navigate("detail/$idBuku")
+                    }
                 }
             }
         }

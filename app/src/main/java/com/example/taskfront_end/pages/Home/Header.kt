@@ -80,7 +80,7 @@ fun Header(modifier: Modifier = Modifier){
                             .height(35.dp)
                     ) {
                         Text(
-                            text = "Itunuoluwa Abidoye",
+                            text = "M Afiffudin Al Mahdi",
                             style = TextStyle(
                                 fontSize = 14.sp,
                                 lineHeight = 19.sp,
@@ -89,7 +89,7 @@ fun Header(modifier: Modifier = Modifier){
                             )
                         )
                         Text(
-                            text = "@Itunuoluwa",
+                            text = "@Mastahh__",
                             style = TextStyle(
                                 fontSize = 11.sp,
                                 lineHeight = 12.sp,

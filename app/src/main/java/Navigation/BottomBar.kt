@@ -19,7 +19,7 @@ fun BottomBar(navController: NavHostController) {
     val navItemsList = listOf(
         NavItem("Home", painterResource(id = R.drawable.baseline_home_24), Screen.Home),
         NavItem("Buku", painterResource(id = R.drawable.baseline_menu_book_24), Screen.Buku),
-        NavItem("About", painterResource(id = R.drawable.baseline_settings_24), Screen.About),
+        NavItem("About", painterResource(id = R.drawable.baseline_person_24), Screen.About),
     )
 
     NavigationBar {

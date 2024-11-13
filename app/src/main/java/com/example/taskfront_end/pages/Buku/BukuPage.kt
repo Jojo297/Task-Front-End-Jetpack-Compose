@@ -65,7 +65,9 @@ fun BukuPage(
                 .padding(innerPadding)
         ) {
             items(books, key = { it.id }) { book ->
-                BookItemRow(book)
+                BookItemRow(book){ idBuku ->
+                    navController.navigate("detail/$idBuku")
+                }
             }
         }
     }

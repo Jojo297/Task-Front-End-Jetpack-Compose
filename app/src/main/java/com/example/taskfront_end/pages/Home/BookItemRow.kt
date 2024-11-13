@@ -2,6 +2,7 @@ package com.example.taskfront_end.pages.Home
 
 import Model.Books
 import androidx.compose.foundation.Image
+import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.fillMaxSize
@@ -16,17 +17,22 @@ import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.unit.dp
 import coil.compose.rememberImagePainter
 
 @Composable
-fun BookItemRow(book: Books) {
+fun BookItemRow(book: Books, onClick: (Int) -> Unit) {
+
     Card(
         modifier = Modifier
             .width(120.dp)
-            .height(180.dp),
-        shape = RoundedCornerShape(8.dp),
-//        backgroundColor = Color.White,
+            .height(180.dp)
+            .clickable { onClick(book.id) },
+        shape = RoundedCornerShape(5.dp),
+        colors = CardDefaults.cardColors(
+            Color(0xFFFFFFFF)
+        ),
         elevation = CardDefaults.cardElevation(4.dp)
     ) {
         Column(
@@ -44,7 +50,7 @@ fun BookItemRow(book: Books) {
             Text(
                 text = book.title,
                 modifier = Modifier.padding(8.dp),
-                maxLines = 2
+                maxLines = 2,
             )
 
         }
