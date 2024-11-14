@@ -2,6 +2,7 @@ package com.example.taskfront_end.pages.Home
 
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
+import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
@@ -23,10 +24,11 @@ import androidx.compose.ui.text.TextStyle
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import androidx.navigation.NavController
 import com.example.taskfront_end.R
 
 @Composable
-fun Header(modifier: Modifier = Modifier){
+fun Header(modifier: Modifier = Modifier, navController: NavController){
     Column(
         modifier = modifier.padding(16.dp),
         verticalArrangement = Arrangement.spacedBy(20.dp, Alignment.CenterVertically),
@@ -47,6 +49,7 @@ fun Header(modifier: Modifier = Modifier){
 
         Box(
             modifier = Modifier
+                .clickable { navController.navigate(Screen.About.route) }
                 .shadow(
                     elevation = 44.dp,
                     spotColor = Color(0x0F000000),

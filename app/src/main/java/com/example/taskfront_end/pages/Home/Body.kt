@@ -50,7 +50,7 @@ fun Body(
         verticalArrangement = Arrangement.spacedBy(16.dp)
     ) {
         item {
-            Header()
+            Header(navController = navController)
         }
 
         item {
@@ -98,7 +98,9 @@ fun Body(
         }
 
             items(books, key = { it.id }) { book ->
-                BookItemColumn(book)
+                BookItemColumn(book){ idBuku ->
+                    navController.navigate("detail/$idBuku")
+                }
             }
 
     }

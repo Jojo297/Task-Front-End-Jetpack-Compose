@@ -1,6 +1,5 @@
 package com.example.taskfront_end.pages.About
 
-import android.icu.text.CaseMap.Title
 import androidx.compose.animation.AnimatedVisibility
 import androidx.compose.animation.core.animateDpAsState
 import androidx.compose.foundation.Image
@@ -18,22 +17,15 @@ import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.layout.width
-import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.shape.CircleShape
-import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.automirrored.filled.ArrowBack
-import androidx.compose.material.icons.filled.ArrowBack
-import androidx.compose.material3.Button
-import androidx.compose.material3.ButtonDefaults
 import androidx.compose.material3.ExperimentalMaterial3Api
 import androidx.compose.material3.Icon
 import androidx.compose.material3.IconButton
 import androidx.compose.material3.MaterialTheme
-import androidx.compose.material3.OutlinedTextField
 import androidx.compose.material3.Scaffold
 import androidx.compose.material3.Text
-import androidx.compose.material3.TextFieldDefaults
 import androidx.compose.material3.TopAppBar
 import androidx.compose.material3.TopAppBarDefaults
 import androidx.compose.runtime.Composable
@@ -49,14 +41,12 @@ import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.text.TextStyle
 import androidx.compose.ui.text.font.FontWeight
-import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.navigation.NavController
 import com.example.taskfront_end.R
 import com.example.taskfront_end.ui.theme.TaskFrontEndTheme
-import com.example.taskfront_end.pages.About.AbotMe
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
@@ -66,7 +56,7 @@ fun AboutPage(
 )
 {
 
-    //state top button
+    // Variabel untuk melacak pilihan yang dipilih
     var aboutIsClicked by remember {
         mutableStateOf(true)
     }
@@ -106,7 +96,7 @@ fun AboutPage(
     ) {
         // Gambar Profil
         Image(
-            painter = painterResource(id = R.drawable.user_image), // Ganti dengan gambar profil Anda
+            painter = painterResource(id = R.drawable.user_image),
             contentDescription = "Profile Picture",
             modifier = Modifier
                 .size(100.dp)
@@ -120,7 +110,7 @@ fun AboutPage(
 
         // Nama Pengguna
         Text(
-            text = "Apipu",
+            text = "M Afiffudin Al Mahdi",
             style = TextStyle(
                 fontSize = 24.sp,
                 fontWeight = FontWeight.Bold,
@@ -130,7 +120,8 @@ fun AboutPage(
 
         // Informasi Kontak
         Text(
-            text = "@mastahh__ | +62 857 6535 1290",
+            modifier = Modifier.padding(top = 8.dp),
+            text = "\"Menyerahlah dan jangan semangat\"",
             style = TextStyle(
                 fontSize = 16.sp,
                 color = Color(0xFF666666)
@@ -139,6 +130,7 @@ fun AboutPage(
 
         Spacer(modifier = Modifier.height(24.dp))
 
+        // Pilihan About Me dan Contact
         Row(
             modifier = Modifier.fillMaxWidth(),
             verticalAlignment = Alignment.CenterVertically,
@@ -205,6 +197,7 @@ fun AboutPage(
 
         Spacer(modifier = Modifier.height(16.dp))
 
+        // menampilkan pilihan yang dipilih
         if (aboutIsClicked) {
             AbotMe()
         } else if (contactIsClicked) {

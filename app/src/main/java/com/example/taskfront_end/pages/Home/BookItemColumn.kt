@@ -4,6 +4,7 @@ import Model.Books
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
 import androidx.compose.foundation.border
+import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
@@ -27,12 +28,13 @@ import coil.compose.rememberImagePainter
 
 
 @Composable
-fun BookItemColumn(book: Books) {
+fun BookItemColumn(book: Books, onClick: (Int) -> Unit) {
     Box(
         modifier = Modifier
             .padding(horizontal = 16.dp)
             .width(338.dp)
             .height(143.dp)
+            .clickable { onClick(book.id) }
             .shadow(
                 elevation = 6.dp,
                 spotColor = Color(0x0D000000),
