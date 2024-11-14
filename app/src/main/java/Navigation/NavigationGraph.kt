@@ -15,7 +15,7 @@ fun NavigationGraph(navController: NavHostController, modifier: Modifier = Modif
     NavHost(navController, startDestination = Screen.Home.route, modifier = modifier) {
         composable(Screen.Home.route) { HomePage(navController = navController) }
         composable(Screen.Buku.route) { BukuPage(navController = navController) }
-        composable(Screen.About.route) { AboutPage() }
+        composable(Screen.About.route) { AboutPage(navController = navController) }
         composable("detail/{idBuku}") { backStackEntry ->
             val idBuku = backStackEntry.arguments?.getString("idBuku")?.toIntOrNull()
             DetailBuku(navController = navController, idBuku = idBuku)
